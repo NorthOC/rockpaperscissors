@@ -35,8 +35,8 @@ function playRound(playerSelection, computerSelection) {
         return console.log(sciWin);
     }
 }
-  const playerSelection = options[0];
+  const playerSelection = options[1];
   const computerSelection = computerPlay();
-  console.log(playerSelection);
-  console.log(computerSelection);
+  console.log(`You picked ${playerSelection}!`);
+  console.log(`AI picked ${computerSelection}!`);
   playRound(playerSelection, computerSelection);
