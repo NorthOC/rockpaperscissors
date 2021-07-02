@@ -35,8 +35,14 @@ function playRound(playerSelection, computerSelection) {
         return console.log(sciWin);
     }
 }
-  const playerSelection = options[1];
-  let computerSelection = computerPlay();
-  console.log(`You picked ${playerSelection}!`);
-  console.log(`AI picked ${computerSelection}!`);
-  playRound(playerSelection, computerSelection);
+let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+while (options.includes(playerSelection) !== true){
+    playerSelection = prompt("Try again sucker!")
+}
+let computerSelection = computerPlay();
+
+console.log(`You picked ${playerSelection}!`);
+
+console.log(`AI picked ${computerSelection}!`);
+
+playRound(playerSelection, computerSelection);
