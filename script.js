@@ -15,45 +15,65 @@ const sciLose = "You lose! Rock breaks scissors."
 function computerPlay(){
     return options[Math.floor(Math.random() * 3)];
 }
-//who wins or loses based on pick
+//who wins or loses based on pick and adding points
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection){
-        return console.log(`IT'S A TIE!`);
+     console.log(`IT'S A TIE!`);
 
     } else if (playerSelection == ROCK && computerSelection == PAPER){
-        return console.log(rockLose);
+        aiScore += 1;
+     console.log(rockLose);
 
     } else if (playerSelection == ROCK && computerSelection == SCRISSORS){
-        return console.log(rockWin);
+        playerScore += 1;
+     console.log(rockWin);
 
     } else if (playerSelection == PAPER && computerSelection == ROCK){
-        return console.log(paperWin);
+        playerScore += 1;
+     console.log(paperWin);
 
     } else if (playerSelection == PAPER && computerSelection == SCRISSORS){
-        return console.log(paperLose);
+        aiScore += 1;
+     console.log(paperLose);
 
     } else if (playerSelection == SCRISSORS && computerSelection == ROCK){
-        return console.log(sciLose);
+        aiScore += 1;
+     console.log(sciLose);
     } else {
-        return console.log(sciWin);
+        playerScore += 1;
+     console.log(sciWin);
     }
 }
-//player picking the choice
-let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-while (options.includes(playerSelection) !== true){
-    playerSelection = prompt("Try again sucker!")
-}
-//running computer pick
-let computerSelection = computerPlay();
-
-//eye candy in console
-console.log(`You picked ${playerSelection}!`);
-console.log(`AI picked ${computerSelection}!`);
+//defining choice variables
+let playerSelection;
+let computerSelection;
 
 // function for a number of rounds
+let playerScore = 0;
+let aiScore = 0;
+
 function game(){
-    for(let i = 0; i <= 9; ){
-        playRound(playerSelection, computerSelection);
+    for(let i = 0; i <= 20; i++){
+        if (playerScore == 5){
+            console.log("You Win!")
+            break
+        } else if (aiScore == 5) {
+            console.log("AI rules supreme!")
+            break
+        } else {
+            playerSelection = prompt(`Rock, paper, scissors. Round ${i + 1}, fight!`).toLowerCase();
+            while (options.includes(playerSelection) !== true){
+                playerSelection = prompt("Try again sucker!").toLowerCase();
+            }
+            computerSelection = computerPlay();
+            playRound(playerSelection, computerSelection);
+            //eye candy
+            console.log(`You picked ${playerSelection}! Your score ${playerScore}`);
+            console.log(`AI picked ${computerSelection}! AI score ${aiScore}`);
+
+            continue
+        }
     }
 
 }
+game();
