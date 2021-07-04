@@ -18,7 +18,7 @@ function computerPlay(){
 //who wins or loses based on pick and adding points
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection){
-     console.log(`IT'S A TIE!`);
+     messages.textContent = `IT'S A TIE! NO POINTS!`;
 
     } else if (playerSelection == ROCK && computerSelection == PAPER){
         aiScore += 1;

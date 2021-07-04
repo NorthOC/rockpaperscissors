@@ -14,3 +14,11 @@ p{
     width: 25%;
     text-align: center;
 }
+#container{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+#ending{
+    text-align: center;
+}
