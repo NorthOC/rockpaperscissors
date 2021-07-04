@@ -53,27 +53,33 @@ let playerScore = 0;
 let aiScore = 0;
 
 function game(){
-    for(let i = 0; i <= 20; i++){
         if (playerScore == 5){
-            console.log("You Win!")
-            break
+            ending("You Win!")
         } else if (aiScore == 5) {
-            console.log("AI rules supreme!")
-            break
+            ending("AI rules supreme!")
         } else {
-            playerSelection = prompt(`Rock, paper, scissors. Round ${i + 1}, fight!`).toLowerCase();
-            while (options.includes(playerSelection) !== true){
-                playerSelection = prompt("Try again sucker!").toLowerCase();
-            }
             computerSelection = computerPlay();
             playRound(playerSelection, computerSelection);
-            //eye candy
-            console.log(`You picked ${playerSelection}! Your score ${playerScore}`);
-            console.log(`AI picked ${computerSelection}! AI score ${aiScore}`);
-
-            continue
         }
-    }
-
+    
 }
-game();
+
+function ending(text){
+    const message = document.querySelector("#ending");
+    message.textContent = text;
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button =>{
+        button.style.cssText = "display: none;"
+    })
+}
+const rockbutton = document.querySelector("#rock");
+const paperbutton = document.querySelector("#paper");
+const scibutton = document.querySelector("#scissors");
+const pick = function(e){
+    playerSelection = e.target.value;
+    game()
+}
+
+rockbutton.addEventListener("click", pick)
+paperbutton.addEventListener("click", pick)
+scibutton.addEventListener("click", pick)
