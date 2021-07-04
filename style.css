@@ -1,0 +1,16 @@
+.incont{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+p{
+    margin-right: 10px;
+}
+.parent{
+    display: flex;
+    flex-direction: row;
+}
+.msgs{
+    width: 25%;
+    text-align: center;
+}

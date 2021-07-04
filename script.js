@@ -22,26 +22,26 @@ function playRound(playerSelection, computerSelection) {
 
     } else if (playerSelection == ROCK && computerSelection == PAPER){
         aiScore += 1;
-     console.log(rockLose);
+        messages.textContent = rockLose;
 
     } else if (playerSelection == ROCK && computerSelection == SCRISSORS){
         playerScore += 1;
-     console.log(rockWin);
+        messages.textContent = rockWin;
 
     } else if (playerSelection == PAPER && computerSelection == ROCK){
         playerScore += 1;
-     console.log(paperWin);
+        messages.textContent = paperWin;
 
     } else if (playerSelection == PAPER && computerSelection == SCRISSORS){
         aiScore += 1;
-     console.log(paperLose);
+        messages.textContent = paperLose;
 
     } else if (playerSelection == SCRISSORS && computerSelection == ROCK){
         aiScore += 1;
-     console.log(sciLose);
+        messages.textContent = sciLose;
     } else {
         playerScore += 1;
-     console.log(sciWin);
+        messages.textContent = sciWin;
     }
 }
 //defining choice variables
@@ -52,18 +52,21 @@ let computerSelection;
 let playerScore = 0;
 let aiScore = 0;
 
+const myscore = document.querySelector("#mescore");
+const aiscore = document.querySelector("#aiscore");
+const messages = document.querySelector(".msgs");
+//game function
 function game(){
-        if (playerScore == 5){
-            ending("You Win!")
-        } else if (aiScore == 5) {
-            ending("AI rules supreme!")
-        } else {
-            computerSelection = computerPlay();
             playRound(playerSelection, computerSelection);
-        }
+            if (playerScore == 5){
+                ending("You Win!")
+            } else if (aiScore == 5) {
+                ending("AI rules supreme!")}
+            myscore.textContent = playerScore;
+            aiscore.textContent = aiScore;
     
 }
-
+//when the game ends run a retry function
 function ending(text){
     const message = document.querySelector("#ending");
     message.textContent = text;
@@ -71,12 +74,33 @@ function ending(text){
     buttons.forEach(button =>{
         button.style.cssText = "display: none;"
     })
+    const retry = document.createElement("button");
+    retry.textContent = "Retry";
+    const container = document.querySelector("#container");
+    container.appendChild(retry);
+    function playagain(){
+        playerScore = 0;
+        aiScore = 0;
+        message.textContent = "Rock, Paper, Scissors";
+        buttons.forEach(button =>{
+            button.style.cssText = "display: default"
+            retry.remove();
+        })
+    }
+    retry.addEventListener("click", playagain)
+
 }
+
+
+//selected buttons to listen for event
 const rockbutton = document.querySelector("#rock");
 const paperbutton = document.querySelector("#paper");
 const scibutton = document.querySelector("#scissors");
+//onclick function
 const pick = function(e){
     playerSelection = e.target.value;
+    console.log(e.target.value)
+    computerSelection = computerPlay();
     game()
 }
 

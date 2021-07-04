@@ -2,19 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <h1 id="ending">Rock Paper Scissors</h1>
-    <div>
-        <button id ="rock" value="ROCK">Rock</button>
-        <button id = "paper" value = "PAPER">Paper</button>
-        <button id = "scissors" value = "SCISSORS">Scissors</button>
+    <div id="container">
+        <button id ="rock" value="rock">Rock</button>
+        <button id = "paper" value = "paper">Paper</button>
+        <button id = "scissors" value = "scissors">Scissors</button>
     </div>
     <h2>Score</h2>
-    <div>
-        <p>Me</p>
-        <p>AI</p>
+    <div class="parent">
+        <div class="incont">
+            <p>Me</p>
+            <p id="mescore">0</p>
+        </div>
+        <h2 class="msgs">Begin</h2>
+        <div class="incont">
+            <p>AI</p>
+            <p id = "aiscore">0</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
