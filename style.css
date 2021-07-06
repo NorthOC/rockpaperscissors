@@ -2,6 +2,16 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    background-color: rgb(231, 116, 8);
+    width: 10%;
+    border-radius: 15px;
+    text-align: center;
+    color: black;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 p{
     margin-right: 10px;
