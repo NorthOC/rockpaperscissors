@@ -98,8 +98,8 @@ const paperbutton = document.querySelector("#paper");
 const scibutton = document.querySelector("#scissors");
 //onclick function
 const pick = function(e){
-    playerSelection = e.target.value;
-    console.log(e.target.value)
+    playerSelection = e.target.alt;
+    console.log(e.target.alt)
     computerSelection = computerPlay();
     game()
 }
