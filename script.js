@@ -70,6 +70,8 @@ function game(){
 function ending(text){
     const message = document.querySelector("#ending");
     message.textContent = text;
+    playerScore = 0;
+        aiScore = 0;
     const buttons = document.querySelectorAll("button");
     buttons.forEach(button =>{
         button.style.cssText = "display: none;"
@@ -79,8 +81,6 @@ function ending(text){
     const container = document.querySelector("#container");
     container.appendChild(retry);
     function playagain(){
-        playerScore = 0;
-        aiScore = 0;
         message.textContent = "Rock, Paper, Scissors";
         buttons.forEach(button =>{
             button.style.cssText = "display: default"
