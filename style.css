@@ -11,22 +11,24 @@
 body{
     background-color: black;
     color: white;
+    font-size: 100%;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 1vw;
 }
 .parent{
     display: flex;
     flex-direction: row;
     margin: auto 5%;
+    width: 90%;
 }
 .msgs{
-    width: 100%;
+    width: 90%;
     text-align: center;
 }
 #container{
     margin: auto;
     text-align: center;
-    width: 55%;
-    min-height: 225px;
+    width: 50%;
 }
 #ending{
     text-align: center;
@@ -35,6 +37,7 @@ body{
     position: absolute;
     margin: auto;
     width: 100%;
+    height: 405px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -49,7 +52,7 @@ body{
 
 }
 img{
-    width: 100%;
+    width: 90%;
     filter: invert(1);
 }
 #rock{
