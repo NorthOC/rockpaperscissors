@@ -77,7 +77,12 @@ function ending(text){
         button.style.cssText = "display: none;"
     })
     const retry = document.createElement("button");
-    retry.textContent = "Retry";
+    retry.className = "pointer";
+    const img = document.createElement("img");
+    retry.appendChild(img);
+    img.src = "retry.svg";
+    img.alt = "retry";
+    img.id = "retry"
     const container = document.querySelector("#container");
     container.appendChild(retry);
     function playagain(){

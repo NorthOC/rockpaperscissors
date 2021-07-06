@@ -13,21 +13,19 @@ body{
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
-p{
-    margin-right: 10px;
-}
 .parent{
     display: flex;
     flex-direction: row;
+    margin: auto 5%;
 }
 .msgs{
-    width: 25%;
+    width: 100%;
     text-align: center;
 }
 #container{
     margin: auto;
     text-align: center;
-    width: 50%;
+    width: 55%;
 }
 #ending{
     text-align: center;
@@ -42,4 +40,20 @@ p{
 }
 .pointer{
     cursor: pointer;
+    width: 30%;
+    text-decoration: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+
+}
+img{
+    width: 100%;
+    filter: invert(1);
+}
+#rock{
+    margin: 15% 0px;
+}
+#retry{
+    margin-top: 30%;
 }
