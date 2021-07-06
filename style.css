@@ -22,3 +22,11 @@ p{
 #ending{
     text-align: center;
 }
+#middle-cont{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
