@@ -60,8 +60,11 @@ function game(){
             playRound(playerSelection, computerSelection);
             if (playerScore == 5){
                 ending("You Win!")
+                messages.style.cssText = "display: none;";
             } else if (aiScore == 5) {
-                ending("AI rules supreme!")}
+                ending("AI rules supreme!")
+                messages.style.cssText = "display: none;";
+            }
             myscore.textContent = playerScore;
             aiscore.textContent = aiScore;
     
@@ -86,9 +89,11 @@ function ending(text){
     const container = document.querySelector("#container");
     container.appendChild(retry);
     function playagain(){
-        message.textContent = "Rock, Paper, Scissors";
+        message.textContent = "Come at me!!!";
         buttons.forEach(button =>{
             button.style.cssText = "display: default"
+            messages.style.cssText = "display: initial;";
+            messages.textContent = "";
             retry.remove();
         })
     }
@@ -104,7 +109,6 @@ const scibutton = document.querySelector("#scissors");
 //onclick function
 const pick = function(e){
     playerSelection = e.target.alt;
-    console.log(e.target.alt)
     computerSelection = computerPlay();
     game()
 }
