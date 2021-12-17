@@ -4,19 +4,21 @@
 .incont{
     text-align: center;
     color: black;
-    font-size: 150px;
+    font-size: 130px;
     width: 100%;
     height: auto;
     padding: 25px 35px;
 
 }
 #mescore{
-    background-color: rgb(47, 216, 70);
+    background-color: rgb(110, 199, 122);
     margin: 0px;
+    border-radius: 50px;
 }
 #aiscore{
     background-color: rgb(248, 77, 34);
     margin: 0px;
+    border-radius: 50px;
 }
 body{
     background-color: black;
@@ -49,7 +51,7 @@ body{
 }
 #ending{
     text-align: center;
-    font-size: 100px;
+    font-size: 90px;
     margin: 0px;
 }
 .pointer{
@@ -61,12 +63,12 @@ body{
 }
 img{
     filter: invert(1);
+    width: 80%;
 }
 #rock{
-    margin-top: -70px;
+    margin-top: -50px;
 }
 #retry{
-    margin-top: 30%;
     width: 70%;
     height: auto;
 }
