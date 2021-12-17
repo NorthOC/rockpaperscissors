@@ -21,7 +21,10 @@
     border-radius: 50px;
 }
 body{
-    background-color: black;
+    background: linear-gradient(
+      60deg, rgb(0 0 0 / 90%), rgb(0 0 0 / 90%)),
+      url('background.jpg') no-repeat center center fixed;
+      box-shadow: inset 0 0 5em 1em #000;
     color: white;
     font-size: 100%;
     margin: 0px;
