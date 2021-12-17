@@ -83,7 +83,7 @@ function ending(text){
     retry.className = "pointer";
     const img = document.createElement("img");
     retry.appendChild(img);
-    img.src = "retry.svg";
+    img.src = "./assets/retry.svg";
     img.alt = "retry";
     img.id = "retry"
     const container = document.querySelector("#container");
